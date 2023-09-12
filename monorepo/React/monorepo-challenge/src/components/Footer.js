@@ -1,7 +1,7 @@
 function Footer() {
     return(
         <div>
-            <h3>Footer</h3>
+            <h3>Powered by Pabau :)</h3>
         </div>
     )
 }

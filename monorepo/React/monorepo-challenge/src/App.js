@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import Body from './components/Body';
 import Footer from './components/Footer';
+import './App.css';
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -18,16 +19,22 @@ function App() {
 
   return (
     <div className="App">
-      <Header currentStep={currentStep} onBackClick={handleBackClick} />
-      {currentStep === 1 ? (
-        <Body onSelectOption={handleSelectOption} />
-      ) : (
-        <div>
-          <h2>Selected Option:</h2>
-          <p>{selectedOption}</p>
-        </div>
-      )}
-      <Footer />
+      <div className='header'>
+        <Header currentStep={currentStep} onBackClick={handleBackClick} />
+      </div>
+      <div className='body'>
+        {currentStep === 1 ? (
+          <Body onSelectOption={handleSelectOption} />
+        ) : (
+          <div>
+            <h2>Selected Option:</h2>
+            <p>{selectedOption}</p>
+          </div>
+        )}
+      </div>
+      <div className='footer'>
+        <Footer />
+      </div>
     </div>
   );
 }
